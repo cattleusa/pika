@@ -1752,7 +1752,7 @@ class BlockingChannel(object):
 
         # Process events as long as consumers exist on this channel
         while self._consumer_infos:
-            self.connection.process_data_events(time_limit=None)
+            self.connection.process_data_events(time_limit=1)
 
     def stop_consuming(self, consumer_tag=None):
         """ Cancels all consumers, signalling the `start_consuming` loop to
